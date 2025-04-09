@@ -3,16 +3,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:striky/core/constants/container_decoration.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
-import 'package:striky/view/myPhotos/widgets/custom_purple_button.dart';
 import 'package:striky/view/workOut/widgets/custom_divider.dart';
 import 'package:striky/view/workOut/widgets/defficulty_container.dart';
 import 'package:striky/view/workOut/widgets/schedule_container.dart';
 import 'package:striky/view/workOut/widgets/double_text.dart';
 import 'package:striky/view/workOut/widgets/ex_gears.dart';
 import 'package:striky/view/workOut/widgets/exercise_item.dart';
-import 'package:striky/view/workOut/widgets/upper_part.dart';
-import 'package:striky/view/workOut/widgets/workout_card.dart';
-import 'package:striky/view/workOut/widgets/workout_info_card.dart';
+
 
 class ExerciseWorkOut extends StatelessWidget {
   const ExerciseWorkOut({super.key});
