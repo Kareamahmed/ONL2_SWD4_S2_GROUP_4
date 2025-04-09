@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:striky/core/constants/container_decoration.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
+import 'package:striky/core/routes/go_route.dart';
 import 'package:striky/view/workOut/widgets/custom_divider.dart';
 import 'package:striky/view/workOut/widgets/defficulty_container.dart';
 import 'package:striky/view/workOut/widgets/schedule_container.dart';
@@ -103,7 +105,9 @@ class ExerciseWorkOut extends StatelessWidget {
                             child: ListView.builder(
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),
-                              itemBuilder: (context, index) => ExerciseItem(title: 'Warm up', subtitle: '12x', image: kfullbodyimg),
+                              itemBuilder: (context, index) => ExerciseItem(title: 'Warm up', subtitle: '12x', image: kfullbodyimg,onTap: (){
+                                GoRouter.of(context).push(AppRoutes.exercisepage);
+                              },),
                                itemCount: 10,),
                           ),
                         ],

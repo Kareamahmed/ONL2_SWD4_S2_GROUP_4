@@ -69,6 +69,8 @@ const Color ksecondaryColor = Color(0xff191919);
 const Color kgreencolor = Color(0xff53E88B);
 const Color kstandardblack = Color(0xff1D1617);
 const Color kwaterwhite = Color(0xffeaf0ff);
+const Color klightblue = Color(0xff93a7fd);
+const Color klightpurple = Color(0xffce90ea);
 
 //fonts
 const kprimaryfont = "poppins";
@@ -101,3 +103,4 @@ const ktwodots = "assets/imgs/twodots.svg";
 const kprogressimg = "assets/imgs/progressimg.svg";
 const kcameraswitcher = "assets/imgs/cameraswitcher.svg";
 const kbarbell = "assets/imgs/barbell.svg";
+const kplay = "assets/imgs/play.svg";

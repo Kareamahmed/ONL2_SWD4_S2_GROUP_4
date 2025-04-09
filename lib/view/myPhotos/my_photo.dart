@@ -7,6 +7,7 @@ import 'package:striky/core/constants/container_decoration.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
 import 'package:striky/core/routes/go_route.dart';
+import 'package:striky/view/myPhotos/widgets/custom_appBar.dart';
 import 'package:striky/view/myPhotos/widgets/custom_icon_container.dart';
 import 'package:striky/view/myPhotos/widgets/custom_purple_button.dart';
 
@@ -30,34 +31,11 @@ class _MyPhotoState extends State<MyPhoto> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'Progress Photo',
-          style: TextFonts.kdarkboldfont16,
-        ),
-        backgroundColor: Colors.white,
-        leading: CustomIconContainer(
-          child: Icon(Icons.arrow_back_ios_new_rounded,
-              size: 20, color: Colors.black87),
-          onpressed: () {
-            GoRouter.of(context).pop();
+      appBar: CustomAppBar(
+          title: 'Progress Photo',
+          onpressed1: () {
           },
-        ),
-        actions: [
-          CustomIconContainer(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 15.0,
-              ),
-              child: SvgPicture.asset(
-                ktwodots,
-              ),
-            ),
-            onpressed: () {},
-          ),
-        ],
-      ),
+          onpressed2: () {}),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: CustomScrollView(slivers: [

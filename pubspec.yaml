@@ -69,6 +69,7 @@ flutter:
     - assets/imgs/lowbodyimg.svg
     - assets/imgs/abimg.svg
     - assets/imgs/barbell.svg
+    - assets/imgs/play.svg
 
   fonts:
     - family: poppins

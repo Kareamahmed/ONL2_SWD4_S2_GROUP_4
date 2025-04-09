@@ -40,6 +40,12 @@ class TextFonts {
     color: Colors.grey.shade700,
   );
 
+    static  TextStyle klightbluefont14 = TextStyle(
+    fontSize: 14,
+    fontFamily: kprimaryfont,
+    color: klightblue,
+  );
+
   static const TextStyle kgraynormalfont12 = TextStyle(
     fontSize: 12,
     color: klightgrey,

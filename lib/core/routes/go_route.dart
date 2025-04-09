@@ -11,6 +11,7 @@ import 'package:striky/view/intro_pages/upload_pic/apload_pic.dart';
 import 'package:striky/view/intro_pages/on_boarding_pages/on_boarding_pages.dart';
 import 'package:striky/view/myPhotos/camera_screen/camera_screen.dart';
 import 'package:striky/view/navigation_buttom_bar/navigation_buttom_bar.dart';
+import 'package:striky/view/workOut/pages/exercise_page.dart';
 import 'package:striky/view/workOut/pages/exercise_work_out.dart';
 
 class AppRoutes {
@@ -28,6 +29,7 @@ class AppRoutes {
   static const String navigationButtomBarPage = "/navigationButtomBarPage";
   static const String camerascreen = "/camerascreen";
   static const String exerciseworkOut = "/exerciseworkOut";
+  static const String exercisepage = "/exercisepage";
 
 
   static final GoRouter router = GoRouter(
@@ -85,6 +87,10 @@ class AppRoutes {
        GoRoute(
         path: exerciseworkOut,
         builder: (context, state) => ExerciseWorkOut(),
+      ),
+       GoRoute(
+        path: exercisepage,
+        builder: (context, state) => ExercisePage(),
       ),
     ],
   );
