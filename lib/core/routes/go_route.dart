@@ -13,6 +13,8 @@ import 'package:striky/view/myPhotos/camera_screen/camera_screen.dart';
 import 'package:striky/view/navigation_buttom_bar/navigation_buttom_bar.dart';
 import 'package:striky/view/workOut/pages/exercise_page.dart';
 import 'package:striky/view/workOut/pages/exercise_work_out.dart';
+import 'package:striky/view/workOut/pages/schedule/pages/add_schedule.dart';
+import 'package:striky/view/workOut/pages/schedule/pages/schedule_screen.dart';
 
 class AppRoutes {
 
@@ -30,6 +32,8 @@ class AppRoutes {
   static const String camerascreen = "/camerascreen";
   static const String exerciseworkOut = "/exerciseworkOut";
   static const String exercisepage = "/exercisepage";
+  static const String schedulescreen = "/schedulescreen";
+  static const String addSchedule = "/addSchedule";
 
 
   static final GoRouter router = GoRouter(
@@ -91,6 +95,14 @@ class AppRoutes {
        GoRoute(
         path: exercisepage,
         builder: (context, state) => ExercisePage(),
+      ),
+       GoRoute(
+        path: schedulescreen,
+        builder: (context, state) => ScheduleScreen(),
+      ),
+        GoRoute(
+        path: addSchedule,
+        builder: (context, state) => AddSchedule(),
       ),
     ],
   );

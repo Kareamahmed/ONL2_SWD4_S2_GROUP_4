@@ -66,7 +66,9 @@ class WorkOut extends StatelessWidget {
                                 ),
                                 CustomPurpleButton(
                                   text: 'Check',
-                                  onpressed: () {},
+                                  onpressed: () {
+                                    GoRouter.of(context).push(AppRoutes.schedulescreen);
+                                  },
                                 )
                               ],
                             ),
