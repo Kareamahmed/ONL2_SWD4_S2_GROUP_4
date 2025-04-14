@@ -1,0 +1,101 @@
+name: striky
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  auto_size_text: ^3.0.0
+  camera: ^0.11.1
+  fl_chart: ^0.70.2
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.17
+  flutter_time_picker_spinner: ^2.0.0
+  get: ^4.7.2
+  go_router: ^14.8.1
+  intl: ^0.20.2
+  otp_pin_field: ^1.4.0
+  path: ^1.8.3
+  path_provider: ^2.1.5
+  wheel_picker: ^0.2.1
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/imgs/s1Frame.svg
+    - assets/imgs/s2Frame.svg
+    - assets/imgs/s3Frame.svg
+    - assets/imgs/s4Frame.svg
+    - assets/imgs/lock.svg
+    - assets/imgs/emailprefix.svg
+    - assets/imgs/loginmark.svg
+    - assets/imgs/google.svg
+    - assets/imgs/facebook.svg
+    - assets/imgs/profile.svg
+    - assets/imgs/IconBack.svg
+    - assets/imgs/Message.svg
+    - assets/imgs/Email.svg
+    - assets/imgs/otpRatingphoto.svg
+    - assets/imgs/gmailExample.svg
+    - assets/imgs/smsExample.svg
+    - assets/imgs/BackNavs.svg
+    - assets/imgs/Congrats.svg
+    - assets/imgs/completeprofile.svg
+    - assets/imgs/CardGoals1.svg
+    - assets/imgs/CardGoals2.svg
+    - assets/imgs/CardGoals3.svg
+    - assets/imgs/2User.svg
+    - assets/imgs/Calendar.svg
+    - assets/imgs/weight-scale.svg
+    - assets/imgs/Swap.svg
+    - assets/imgs/Button-Kg.svg
+    - assets/imgs/Button-Cm.svg
+    - assets/imgs/avatar.svg
+    - assets/imgs/skipButton.svg
+    - assets/imgs/cameraicon.svg
+    - assets/imgs/profileicon.svg
+    - assets/imgs/activity.svg
+    - assets/imgs/gridIcon.svg
+    - assets/imgs/homeactive.svg
+    - assets/imgs/progressimg.svg
+    - assets/imgs/twodots.svg
+    - assets/imgs/cameraswitcher.svg
+    - assets/imgs/fullbodyimg.svg
+    - assets/imgs/lowbodyimg.svg
+    - assets/imgs/abimg.svg
+    - assets/imgs/barbell.svg
+    - assets/imgs/play.svg
+    - assets/imgs/customchart.svg
+    - assets/imgs/IconBarbel.svg
+    - assets/imgs/arrowright.svg
+    - assets/imgs/graphicon.svg
+    - assets/imgs/decumenticon.svg
+    - assets/imgs/notification.svg
+    - assets/imgs/shielddone.svg
+    - assets/imgs/setting.svg
+
+  fonts:
+    - family: poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins/Poppins-Black.ttf
+          weight: 900
+  uses-material-design: true
