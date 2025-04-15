@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/view/analysis_screen/analysis_screen.dart';
@@ -17,7 +16,7 @@ class NavigationButtomBarPage extends StatefulWidget {
 
 class _NavigationButtomBarState extends State<NavigationButtomBarPage> {
   int _currentIndex = 0;
-  PageController _controller = PageController(initialPage: 0);
+  final PageController _controller = PageController(initialPage: 0);
   List Pages = [
     Home(),
     AnalysisScreen(),

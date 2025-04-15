@@ -80,6 +80,7 @@ flutter:
     - assets/imgs/notification.svg
     - assets/imgs/shielddone.svg
     - assets/imgs/setting.svg
+    - assets/imgs/bannerpie.svg
 
   fonts:
     - family: poppins

@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/routes/go_route.dart';
-import 'package:striky/view/auth/login/widgets/clicked_text.dart';
 import 'package:striky/view/auth/widgets/customBigButton.dart';
 import 'package:striky/view/auth/login/widgets/custom_text_field.dart';
 import 'package:striky/view/auth/login/widgets/main_custom_button.dart';

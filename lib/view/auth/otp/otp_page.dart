@@ -13,7 +13,7 @@ class OtpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      final _otpPinFieldController = GlobalKey<OtpPinFieldState>();
+      final otpPinFieldController = GlobalKey<OtpPinFieldState>();
 
     return Scaffold(
       backgroundColor: Colors.black,
@@ -73,7 +73,7 @@ class OtpPage extends StatelessWidget {
       ),
       SizedBox(
         height: 100,
-        child: CustomOtpField(otpPinFieldKey: _otpPinFieldController),
+        child: CustomOtpField(otpPinFieldKey: otpPinFieldController),
       ),
       Customsmallbutton(title: 'Verify', onTap: () {
                   GoRouter.of(context).push(AppRoutes.congratsScreen);

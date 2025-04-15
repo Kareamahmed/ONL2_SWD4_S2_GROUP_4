@@ -8,7 +8,6 @@ import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
 import 'package:striky/core/routes/go_route.dart';
 import 'package:striky/view/myPhotos/widgets/custom_appBar.dart';
-import 'package:striky/view/myPhotos/widgets/custom_icon_container.dart';
 import 'package:striky/view/myPhotos/widgets/custom_purple_button.dart';
 
 class MyPhoto extends StatefulWidget {

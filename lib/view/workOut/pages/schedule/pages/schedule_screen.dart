@@ -244,8 +244,8 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
               }
             },
             backgroundColor: AppColors.lableColor,
-            child: const Icon(Icons.add, color: Colors.white),
             shape: const CircleBorder(),
+            child: const Icon(Icons.add, color: Colors.white),
           ),
         ),
       ),

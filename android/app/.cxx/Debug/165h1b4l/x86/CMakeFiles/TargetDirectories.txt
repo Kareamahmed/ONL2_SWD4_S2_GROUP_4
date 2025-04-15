@@ -1,0 +1,2 @@
+D:/project/ONL2_SWD4_S2_GROUP_4/android/app/.cxx/Debug/165h1b4l/x86/CMakeFiles/edit_cache.dir
+D:/project/ONL2_SWD4_S2_GROUP_4/android/app/.cxx/Debug/165h1b4l/x86/CMakeFiles/rebuild_cache.dir

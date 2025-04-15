@@ -5,7 +5,6 @@ import 'package:striky/core/constants/container_decoration.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
 import 'package:striky/view/profile/widgets/custom_switch.dart';
-import 'package:striky/view/profile/widgets/profile_account_tile.dart';
 
 class ProfileNotificationContainer extends StatelessWidget {
   const ProfileNotificationContainer({
