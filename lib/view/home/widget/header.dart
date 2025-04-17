@@ -31,7 +31,7 @@ class Header extends StatelessWidget {
             ),
             Row(
               children: [
-               CustomSwitch(),
+               CustomSwitch(isOn: false, onToggle: (){}),
                 SizedBox(width: 215),
                 custom.IconButton(Icons.search),
                 SizedBox(width: 10),

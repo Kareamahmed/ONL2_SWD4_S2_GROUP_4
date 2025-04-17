@@ -113,3 +113,7 @@ const kdecumenticon = "assets/imgs/graphicon.svg";
 const knotification = "assets/imgs/notification.svg";
 const kshielddone = "assets/imgs/shielddone.svg";
 const ksetting = "assets/imgs/setting.svg";
+
+// Constant variables
+
+const kSharedPrefNotiEnabled = 'notifications_enabled';

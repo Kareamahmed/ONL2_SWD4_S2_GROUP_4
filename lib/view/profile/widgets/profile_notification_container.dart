@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:striky/controllers/notifications/notification_controller.dart';
 import 'package:striky/core/constants/container_decoration.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
@@ -13,6 +15,7 @@ class ProfileNotificationContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final NotificationController _notiController = Get.find();
     return Container(
       decoration: ContainerDecoration.kFloatingContainerDecoration,
       margin: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -33,7 +36,10 @@ class ProfileNotificationContainer extends StatelessWidget {
         ListTile(
           leading: SvgPicture.asset(knotification,colorFilter: ColorFilter.mode(kprimaryColor, BlendMode.srcIn),),
           title: Text('Pop-up Notification', style: TextFonts.kdarkgrayfont14,),
-          trailing: CustomSwitch(),
+          trailing: Obx(()=>CustomSwitch(isOn: _notiController.notificationsEnabled.value, onToggle:(){
+            _notiController.notificationsEnabled.value = !_notiController.notificationsEnabled.value;
+            _notiController.toggleNotifications(_notiController.notificationsEnabled.value);
+          } ),),
         )
 
       ]),
