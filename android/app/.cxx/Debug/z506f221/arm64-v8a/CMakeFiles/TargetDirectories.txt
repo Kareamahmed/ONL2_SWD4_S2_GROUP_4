@@ -1,0 +1,2 @@
+D:/ONL2_SWD4_S2_GROUP_4/android/app/.cxx/Debug/z506f221/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/ONL2_SWD4_S2_GROUP_4/android/app/.cxx/Debug/z506f221/arm64-v8a/CMakeFiles/rebuild_cache.dir

@@ -4,12 +4,7 @@ class CustomSwitch extends StatelessWidget {
   final bool isOn;
   final VoidCallback onToggle;
 
-  const CustomSwitch({
-    super.key,
-    required this.isOn,
-    required this.onToggle,
-  });
-
+  CustomSwitch({required this.isOn, required this.onToggle});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

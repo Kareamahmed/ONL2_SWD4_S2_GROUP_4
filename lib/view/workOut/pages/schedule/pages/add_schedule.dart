@@ -7,7 +7,6 @@ import 'package:striky/models/schedule/workout_schedule.dart';
 import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 import 'package:intl/intl.dart';
 import 'package:striky/view/myPhotos/widgets/custom_appbar.dart';
-import 'package:striky/view/workOut/widgets/more_options_button.dart';
 import 'package:striky/view/workOut/widgets/options_dialog.dart';
 import 'package:striky/view/workOut/widgets/workout_category.dart';
 

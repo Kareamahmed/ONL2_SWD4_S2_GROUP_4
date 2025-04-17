@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/view/analysis_screen/analysis_screen.dart';
@@ -19,7 +18,7 @@ class _NavigationButtomBarState extends State<NavigationButtomBarPage> {
   int _currentIndex = 0;
   PageController controller = PageController(initialPage: 0);
 
-  List pages = [
+  List Pages = [
     Home(),
     AnalysisScreen(),
     WorkOut(),
@@ -37,8 +36,8 @@ class _NavigationButtomBarState extends State<NavigationButtomBarPage> {
                 _currentIndex = index;
               });
             },
-            itemCount: pages.length,
-            itemBuilder: (context, index) => pages[index],
+            itemCount: Pages.length,
+            itemBuilder: (context, index) => Pages[index],
           ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed, 
