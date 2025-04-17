@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as path;
-import 'dart:typed_data';
 
 class PhotoController extends GetxController {
   var photos = <File>[].obs;

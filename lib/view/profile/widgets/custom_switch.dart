@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 
-class CustomSwitch extends StatefulWidget {
-  @override
-  _CustomSwitchState createState() => _CustomSwitchState();
-}
+class CustomSwitch extends StatelessWidget {
+  final bool isOn;
+  final VoidCallback onToggle;
 
-class _CustomSwitchState extends State<CustomSwitch> {
-  bool isOn = false;
+  const CustomSwitch({
+    super.key,
+    required this.isOn,
+    required this.onToggle,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          isOn = !isOn;
-        });
-      },
+      onTap: onToggle,  // Trigger onToggle when tapped
       child: AnimatedContainer(
         duration: Duration(milliseconds: 300),
         width: 50,

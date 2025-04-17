@@ -17,8 +17,9 @@ class NavigationButtomBarPage extends StatefulWidget {
 
 class _NavigationButtomBarState extends State<NavigationButtomBarPage> {
   int _currentIndex = 0;
-  PageController _controller = PageController(initialPage: 0);
-  List Pages = [
+  PageController controller = PageController(initialPage: 0);
+
+  List pages = [
     Home(),
     AnalysisScreen(),
     WorkOut(),
@@ -30,14 +31,14 @@ class _NavigationButtomBarState extends State<NavigationButtomBarPage> {
     return Scaffold(
     
       body:  PageView.builder(
-            controller: _controller,
+            controller: controller,
             onPageChanged: (index) {
               setState(() {
                 _currentIndex = index;
               });
             },
-            itemCount: Pages.length,
-            itemBuilder: (context, index) => Pages[index],
+            itemCount: pages.length,
+            itemBuilder: (context, index) => pages[index],
           ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed, 
@@ -48,7 +49,7 @@ class _NavigationButtomBarState extends State<NavigationButtomBarPage> {
         onTap: (index) {
           setState(() {
             _currentIndex = index;
-            _controller.jumpToPage(index);
+            controller.jumpToPage(index);
           });
         },
         items:  [

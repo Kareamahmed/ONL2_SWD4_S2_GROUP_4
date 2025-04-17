@@ -4,6 +4,7 @@ import 'package:striky/core/constants/container_decoration.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
 import 'package:striky/core/routes/go_route.dart';
+import 'package:striky/core/services/noti_service.dart';
 import 'package:striky/models/workout/general_workout_model.dart';
 import 'package:striky/view/myPhotos/widgets/custom_purple_button.dart';
 import 'package:striky/view/workOut/widgets/custom_divider.dart';
@@ -105,10 +106,14 @@ class WorkOut extends StatelessWidget {
                                 }),
                               ),
                               WorkoutInfoCard(
-                              generalWorkoutModel: GeneralWorkoutModel(image :klowbodyimg, title: 'Lowbody Workout', exerciseNo: '10', duration: '24', onTapped: (){}),
+                              generalWorkoutModel: GeneralWorkoutModel(image :klowbodyimg, title: 'Lowbody Workout', exerciseNo: '10', duration: '24', onTapped: (){
+                                GoRouter.of(context).push(AppRoutes.exerciseworkOut);
+                              }),
                               ),
                               WorkoutInfoCard(
-                                generalWorkoutModel: GeneralWorkoutModel(image :kabimg, title: 'AB Workout', exerciseNo: '10', duration: '24', onTapped: (){}),
+                                generalWorkoutModel: GeneralWorkoutModel(image :kabimg, title: 'AB Workout', exerciseNo: '10', duration: '24', onTapped: (){
+                                  GoRouter.of(context).push(AppRoutes.exerciseworkOut);
+                                }),
                               ),
                             ],
                           ),
