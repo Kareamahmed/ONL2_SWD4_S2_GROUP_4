@@ -1,0 +1,15 @@
+[33mb5a9257[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m3302187[m HEAD@{1}: commit (merge): Merge branch 'main' of https://github.com/Kareamahmed/ONL2_SWD4_S2_GROUP_4
+[33mb5a9257[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33mb5a9257[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{3}: pull origin main: updating HEAD
+[33mb5a9257[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{4}: reset: moving to b5a9257
+[33m802b178[m HEAD@{5}: reset: moving to HEAD
+[33m802b178[m HEAD@{6}: reset: moving to HEAD
+[33m802b178[m HEAD@{7}: reset: moving to 802b178
+[33m802b178[m HEAD@{8}: commit: some modification
+[33mb5a9257[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{9}: reset: moving to b5a9257
+[33mb5a9257[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{10}: commit: some modifications
+[33mdf8f8de[m HEAD@{11}: commit: add notification screen
+[33mf5227ff[m HEAD@{12}: pull origin main: Fast-forward
+[33m672d81e[m HEAD@{13}: reset: moving to HEAD
+[33m672d81e[m HEAD@{14}: clone: from https://github.com/Kareamahmed/ONL2_SWD4_S2_GROUP_4.git
