@@ -3,6 +3,8 @@
     <!-- Permissions go here -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />   
 
 
     <application
@@ -36,6 +38,10 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+            <meta-data
+           android:name="android.health.connect.HC_CLIENT_ID"
+           android:value="313876961252-8cnhgmetqmffuq75h8f6g477fv5394sv.apps.googleusercontent.com" />
+
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

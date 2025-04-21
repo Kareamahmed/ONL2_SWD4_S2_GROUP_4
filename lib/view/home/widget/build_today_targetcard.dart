@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:striky/core/routes/go_route.dart';
 
 
 class BuildTodayTargetcard extends StatelessWidget {
@@ -19,7 +21,7 @@ class BuildTodayTargetcard extends StatelessWidget {
           Text('Today Target', style: TextStyle(fontSize: 16)),
 
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {GoRouter.of(context).push(AppRoutes.fitoverviewloader);},
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xff9DCEFF),
               shape: RoundedRectangleBorder(

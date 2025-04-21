@@ -1,10 +1,12 @@
 import 'package:go_router/go_router.dart';
+import 'package:striky/view/home/fitover_screen/widgets/fitover_loader.dart';
 import 'package:striky/view/auth/congrats_screen/congrats_screen.dart';
 import 'package:striky/view/auth/create_account/create_account.dart';
 import 'package:striky/view/auth/login/login_page.dart';
 import 'package:striky/view/auth/forget_password_screen/foget_password_screen.dart';
 import 'package:striky/view/auth/otp/otp_page.dart';
 import 'package:striky/view/auth/reset_password/reset_password.dart';
+import 'package:striky/view/home/fitover_screen/fit_over_screen.dart';
 import 'package:striky/view/intro_pages/set_goal/set_goal.dart';
 import 'package:striky/view/auth/set_info/set_info.dart';
 import 'package:striky/view/intro_pages/upload_pic/apload_pic.dart';
@@ -34,6 +36,7 @@ class AppRoutes {
   static const String exercisepage = "/exercisepage";
   static const String schedulescreen = "/schedulescreen";
   static const String addSchedule = "/addSchedule";
+  static const String fitoverviewloader = "/fitoverviewloader";
 
 
   static final GoRouter router = GoRouter(
@@ -104,7 +107,7 @@ class AppRoutes {
         path: addSchedule,
         builder: (context, state) => AddSchedule(),
       ),
-      
+      GoRoute(path: fitoverviewloader, builder: (context, state) => FitOverviewLoader()),
     ],
   );
 }

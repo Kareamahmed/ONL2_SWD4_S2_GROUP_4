@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:striky/core/services/noti_service.dart';
+import 'package:striky/core/services/notification/noti_service.dart';
 import 'package:timezone/timezone.dart' as tz;
 
 class NotificationController extends GetxController {

@@ -11,7 +11,6 @@ class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
