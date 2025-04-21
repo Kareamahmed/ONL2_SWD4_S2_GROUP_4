@@ -47,12 +47,14 @@ class NotificationController extends GetxController {
   Future<void> scheduleNotification({
     required int id,
     required String body,
-    required int hour,required int minute,
+    required int hour,
+    required int minute,
   }) async {
-
     await _notiService.scheduleNotification(
       id: id,
-      body: body, hour: hour, minute: minute,
+      body: body,
+      hour: hour,
+      minute: minute,
     );
   }
 

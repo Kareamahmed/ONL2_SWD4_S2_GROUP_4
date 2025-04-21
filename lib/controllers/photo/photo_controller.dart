@@ -10,10 +10,8 @@ class PhotoController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    loadPics(); 
+    loadPics();
   }
-
-
 
 // Future<void> savePicToGallery(File imageFile) async {
 //   try {
@@ -35,7 +33,6 @@ class PhotoController extends GetxController {
 //   }
 // }
 
-
   Future<void> takeAPic(File newPic) async {
     final appDir = await getApplicationDocumentsDirectory();
     final galleryDir = Directory(path.join(appDir.path, 'gallery'));
@@ -48,23 +45,17 @@ class PhotoController extends GetxController {
     final savedImage = await newPic.copy('${galleryDir.path}/$fileName');
 
     photos.insert(0, savedImage);
-    await loadPics(); 
+    await loadPics();
   }
 
-
-
-
-Future<void> deleteAPic(File pic) async {
-  try {
-    await pic.delete();  
-    photos.remove(pic);  
-  } catch (e) {
-    print('Error deleting photo: $e');  
+  Future<void> deleteAPic(File pic) async {
+    try {
+      await pic.delete();
+      photos.remove(pic);
+    } catch (e) {
+      print('Error deleting photo: $e');
+    }
   }
-}
-
-
-
 
   Future<void> loadPics() async {
     final Directory appDir = await getApplicationDocumentsDirectory();
@@ -81,10 +72,7 @@ Future<void> deleteAPic(File pic) async {
     }
   }
 
-
-  
   void toggleFlash() {
-    isFlashOn.value = !isFlashOn.value;  
+    isFlashOn.value = !isFlashOn.value;
   }
-
 }

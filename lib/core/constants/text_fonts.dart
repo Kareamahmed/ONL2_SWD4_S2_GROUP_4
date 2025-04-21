@@ -11,14 +11,11 @@ class TextFonts {
     fontFamily: kprimaryfont,
   );
 
-
-
   static const TextStyle kgraynormalfont16 = TextStyle(
     fontSize: 16,
     color: kstandardgrey,
     fontFamily: kprimaryfont,
   );
-
 
   static const TextStyle kdarkboldfont16 = TextStyle(
     fontSize: 16,
@@ -34,13 +31,13 @@ class TextFonts {
     fontFamily: kprimaryfont,
   );
 
-    static  TextStyle kdarkgrayfont14 = TextStyle(
+  static TextStyle kdarkgrayfont14 = TextStyle(
     fontSize: 14,
     fontFamily: kprimaryfont,
     color: Colors.grey.shade700,
   );
 
-    static  TextStyle klightbluefont14 = TextStyle(
+  static TextStyle klightbluefont14 = TextStyle(
     fontSize: 14,
     fontFamily: kprimaryfont,
     color: klightblue,
@@ -52,7 +49,7 @@ class TextFonts {
     fontFamily: kprimaryfont,
   );
 
-    static const TextStyle kwhitenormalfont12 = TextStyle(
+  static const TextStyle kwhitenormalfont12 = TextStyle(
     fontSize: 12,
     color: Colors.white,
     fontFamily: kprimaryfont,

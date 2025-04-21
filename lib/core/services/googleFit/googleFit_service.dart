@@ -7,7 +7,7 @@ class GoogleFitService {
     final isAvailable = await _health.isHealthConnectAvailable();
 
     if (!isAvailable) {
-      await _health.installHealthConnect(); 
+      await _health.installHealthConnect();
       throw Exception("Health Connect not installed");
     }
 
@@ -25,7 +25,8 @@ class GoogleFitService {
     final midnight = DateTime(now.year, now.month, now.day);
 
     final data = await _health.getHealthDataFromTypes(
-        types:  [HealthDataType.STEPS], startTime: midnight, endTime: now);
-    return data.fold<int>(0, (sum, entry) =>  sum + (entry.value as num).toInt());
+        types: [HealthDataType.STEPS], startTime: midnight, endTime: now);
+    return data.fold<int>(
+        0, (sum, entry) => sum + (entry.value as num).toInt());
   }
 }

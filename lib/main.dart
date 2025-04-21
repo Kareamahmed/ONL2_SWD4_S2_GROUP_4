@@ -7,29 +7,25 @@ import 'package:striky/core/themes/light_theme.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
-
 void main() {
-    WidgetsFlutterBinding.ensureInitialized();
-      tz.initializeTimeZones();
-        tz.setLocalLocation(tz.getLocation('Africa/Cairo'));
-      
-    NotiService().initNotifications();
-      Get.put(NotificationController());
+  WidgetsFlutterBinding.ensureInitialized();
+  tz.initializeTimeZones();
+  tz.setLocalLocation(tz.getLocation('Africa/Cairo'));
+
+  NotiService().initNotifications();
+  Get.put(NotificationController());
 
   runApp(const MainApp());
 }
 
-
-
 class MainApp extends StatelessWidget {
-  
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp.router(
+    return MaterialApp.router(
       theme: lighttheme,
-      routerConfig: AppRoutes.router ,
+      routerConfig: AppRoutes.router,
       debugShowCheckedModeBanner: false,
     );
   }

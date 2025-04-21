@@ -1,25 +1,24 @@
 import 'package:go_router/go_router.dart';
-import 'package:striky/view/home/fitover_screen/widgets/fitover_loader.dart';
-import 'package:striky/view/auth/congrats_screen/congrats_screen.dart';
-import 'package:striky/view/auth/create_account/create_account.dart';
-import 'package:striky/view/auth/login/login_page.dart';
-import 'package:striky/view/auth/forget_password_screen/foget_password_screen.dart';
-import 'package:striky/view/auth/otp/otp_page.dart';
-import 'package:striky/view/auth/reset_password/reset_password.dart';
-import 'package:striky/view/home/fitover_screen/fit_over_screen.dart';
-import 'package:striky/view/intro_pages/set_goal/set_goal.dart';
-import 'package:striky/view/auth/set_info/set_info.dart';
-import 'package:striky/view/intro_pages/upload_pic/apload_pic.dart';
-import 'package:striky/view/intro_pages/on_boarding_pages/on_boarding_pages.dart';
-import 'package:striky/view/myPhotos/camera_screen/camera_screen.dart';
-import 'package:striky/view/navigation_buttom_bar/navigation_buttom_bar.dart';
-import 'package:striky/view/workOut/pages/exercise_page.dart';
-import 'package:striky/view/workOut/pages/exercise_work_out.dart';
-import 'package:striky/view/workOut/pages/schedule/pages/add_schedule.dart';
-import 'package:striky/view/workOut/pages/schedule/pages/schedule_screen.dart';
+import 'package:striky/presentation/view/home/fitover_screen/widgets/fitover_loader.dart';
+import 'package:striky/presentation/view/auth/congrats_screen/congrats_screen.dart';
+import 'package:striky/presentation/view/auth/create_account/create_account.dart';
+import 'package:striky/presentation/view/auth/login/login_page.dart';
+import 'package:striky/presentation/view/auth/forget_password_screen/foget_password_screen.dart';
+import 'package:striky/presentation/view/auth/otp/otp_page.dart';
+import 'package:striky/presentation/view/auth/reset_password/reset_password.dart';
+import 'package:striky/presentation/view/home/fitover_screen/fit_over_screen.dart';
+import 'package:striky/presentation/view/intro_pages/set_goal/set_goal.dart';
+import 'package:striky/presentation/view/auth/set_info/set_info.dart';
+import 'package:striky/presentation/view/intro_pages/upload_pic/apload_pic.dart';
+import 'package:striky/presentation/view/intro_pages/on_boarding_pages/on_boarding_pages.dart';
+import 'package:striky/presentation/view/myPhotos/camera_screen/camera_screen.dart';
+import 'package:striky/presentation/view/navigation_buttom_bar/navigation_buttom_bar.dart';
+import 'package:striky/presentation/view/workOut/pages/exercise_page.dart';
+import 'package:striky/presentation/view/workOut/pages/exercise_work_out.dart';
+import 'package:striky/presentation/view/workOut/pages/schedule/pages/add_schedule.dart';
+import 'package:striky/presentation/view/workOut/pages/schedule/pages/schedule_screen.dart';
 
 class AppRoutes {
-
   static const String login = "/login";
   static const String onboardingScreen = "/onboardingScreen";
   static const String createaccount = "/createaccount";
@@ -38,15 +37,13 @@ class AppRoutes {
   static const String addSchedule = "/addSchedule";
   static const String fitoverviewloader = "/fitoverviewloader";
 
-
   static final GoRouter router = GoRouter(
-    initialLocation: navigationButtomBarPage, 
+    initialLocation: navigationButtomBarPage,
     routes: [
       GoRoute(
         path: onboardingScreen,
         builder: (context, state) => const OnboardingScreen(),
       ),
-
       GoRoute(
         path: login,
         builder: (context, state) => const LoginPage(),
@@ -67,15 +64,15 @@ class AppRoutes {
         path: resetPassword,
         builder: (context, state) => const ResetPassword(),
       ),
-       GoRoute(
+      GoRoute(
         path: congratsScreen,
         builder: (context, state) => const CongratsScreen(),
       ),
-       GoRoute(
+      GoRoute(
         path: setInfo,
         builder: (context, state) => SetInfo(),
       ),
-       GoRoute(
+      GoRoute(
         path: setGoal,
         builder: (context, state) => SetGoal(),
       ),
@@ -83,31 +80,33 @@ class AppRoutes {
         path: uploadPic,
         builder: (context, state) => UploadPic(),
       ),
-       GoRoute(
+      GoRoute(
         path: navigationButtomBarPage,
         builder: (context, state) => NavigationButtomBarPage(),
       ),
-       GoRoute(
+      GoRoute(
         path: camerascreen,
         builder: (context, state) => CameraScreen(),
       ),
-       GoRoute(
+      GoRoute(
         path: exerciseworkOut,
         builder: (context, state) => ExerciseWorkOut(),
       ),
-       GoRoute(
+      GoRoute(
         path: exercisepage,
         builder: (context, state) => ExercisePage(),
       ),
-       GoRoute(
+      GoRoute(
         path: schedulescreen,
         builder: (context, state) => ScheduleScreen(),
       ),
-        GoRoute(
+      GoRoute(
         path: addSchedule,
         builder: (context, state) => AddSchedule(),
       ),
-      GoRoute(path: fitoverviewloader, builder: (context, state) => FitOverviewLoader()),
+      GoRoute(
+          path: fitoverviewloader,
+          builder: (context, state) => FitOverviewLoader()),
     ],
   );
 }

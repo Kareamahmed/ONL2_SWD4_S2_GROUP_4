@@ -13,18 +13,18 @@ class NotiService {
   bool _isInitialized = false;
   bool get isInitialized => _isInitialized;
 
-Future<void> requestNotificationPermission() async {
-  if (await Permission.notification.isDenied) {
-    await Permission.notification.request();
+  Future<void> requestNotificationPermission() async {
+    if (await Permission.notification.isDenied) {
+      await Permission.notification.request();
+    }
   }
-}
 
   //  INITIALIZE
 
   Future<void> initNotifications() async {
     if (_isInitialized) return; // to prevent reinitialize
 
-requestNotificationPermission();
+    requestNotificationPermission();
     //prepare android init settings
     const initSettingAndroid =
         AndroidInitializationSettings('@mipmap/ic_launcher');
@@ -75,38 +75,38 @@ requestNotificationPermission();
 
   // schedule notifications
   Future<void> scheduleNotification({
-  int id = 0,
-  String? body,
-  bool repeatdaily = true,
-  required int hour,
-  required int minute,
-}) async {
-  var now = tz.TZDateTime.now(tz.local);
-  var scheduledate = tz.TZDateTime(tz.local, now.year, now.month, now.day, hour, minute);
+    int id = 0,
+    String? body,
+    bool repeatdaily = true,
+    required int hour,
+    required int minute,
+  }) async {
+    var now = tz.TZDateTime.now(tz.local);
+    var scheduledate =
+        tz.TZDateTime(tz.local, now.year, now.month, now.day, hour, minute);
 
-  // 🔥 This is the fix: push to tomorrow if time has passed
-  if (scheduledate.isBefore(now)) {
-    scheduledate = scheduledate.add(const Duration(days: 1));
+    // 🔥 This is the fix: push to tomorrow if time has passed
+    if (scheduledate.isBefore(now)) {
+      scheduledate = scheduledate.add(const Duration(days: 1));
+    }
+
+    print('⏰ Scheduling notification for $scheduledate');
+
+    try {
+      await notificationsPlugin.zonedSchedule(
+        id,
+        body,
+        body,
+        scheduledate,
+        notificationDetails(),
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        matchDateTimeComponents: repeatdaily ? DateTimeComponents.time : null,
+      );
+      print('✅ Scheduled successfully for $scheduledate');
+    } catch (e) {
+      print('🚨 Error scheduling: $e');
+    }
   }
-
-  print('⏰ Scheduling notification for $scheduledate');
-
-  try {
-    await notificationsPlugin.zonedSchedule(
-      id,
-      body,
-      body,
-      scheduledate,
-      notificationDetails(),
-      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-      matchDateTimeComponents: repeatdaily ? DateTimeComponents.time : null,
-    );
-    print('✅ Scheduled successfully for $scheduledate');
-  } catch (e) {
-    print('🚨 Error scheduling: $e');
-  }
-}
-
 
   // PERIODIC NOTIFICATIONS
   Future<void> periodicNotification({

@@ -8,7 +8,9 @@ environment:
 
 dependencies:
   auto_size_text: ^3.0.0
+  bloc: ^9.0.0
   camera: ^0.11.1
+  dartz: ^0.10.1
   dio: ^5.8.0+1
   fl_chart: ^0.70.2
   flutter:
