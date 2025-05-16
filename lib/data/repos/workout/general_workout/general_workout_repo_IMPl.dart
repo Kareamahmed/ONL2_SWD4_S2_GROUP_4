@@ -21,7 +21,7 @@ class GeneralWorkoutRepoImpl implements GeneralWorkoutRepo {
           .toList();
       result.forEach((exercise) {
         String fullImageUrl =
-            '${kurlBase}${exercise.photoUrl}'; // Concatenate the base URL with the relative photo URL
+            '${kurlBase}${exercise.photoUrl}'; 
         print(
             'ID: ${exercise.id}, Name: ${exercise.name}, Full Photo URL: $fullImageUrl');
       });

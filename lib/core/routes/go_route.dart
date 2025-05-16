@@ -48,7 +48,7 @@ class AppRoutes {
   static const String notificationdemopage = "/notificationdemopage";
 
   static final GoRouter router = GoRouter(
-    initialLocation: onboardingScreen,
+    initialLocation: navigationButtomBarPage,
     routes: [
       GoRoute(
         path: onboardingScreen,
