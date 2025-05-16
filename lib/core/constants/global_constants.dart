@@ -117,3 +117,5 @@ const ksetting = "assets/imgs/setting.svg";
 // Constant variables
 
 const kSharedPrefNotiEnabled = 'notifications_enabled';
+const kurlBase = "http://strikyq.runasp.net";
+const kshareduserId = 'userId';

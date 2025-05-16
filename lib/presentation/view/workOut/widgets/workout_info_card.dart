@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
-import 'package:striky/data/models/workout/general_workout_model.dart';
+import 'package:striky/core/routes/go_route.dart';
+import 'package:striky/data/models/workout/general_exercise_model/general_exercise_model.dart';
 
 class WorkoutInfoCard extends StatelessWidget {
-  const WorkoutInfoCard({super.key, required this.generalWorkoutModel});
+  const WorkoutInfoCard({super.key, required this.generalExerciseModel});
 
-  final GeneralWorkoutModel generalWorkoutModel;
+  final GeneralExerciseModel generalExerciseModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,18 +30,21 @@ class WorkoutInfoCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  generalWorkoutModel.title,
+                  generalExerciseModel.name!,
                   style: TextFonts.kgraynormalfont16.copyWith(
                       color: Colors.black, fontWeight: FontWeight.w500),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  '${generalWorkoutModel.exerciseNo} Exercises | ${generalWorkoutModel.duration} mins',
+                  '${generalExerciseModel.countExercises} Exercises ',
                   style: TextFonts.kdarkgrayfont14.copyWith(fontSize: 12),
                 ),
                 Spacer(),
                 ElevatedButton(
-                  onPressed: generalWorkoutModel.onTapped,
+                  onPressed: () {
+                    GoRouter.of(context).push(AppRoutes.exerciseworkOut,
+                        extra: generalExerciseModel.id);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -71,8 +76,8 @@ class WorkoutInfoCard extends StatelessWidget {
                 radius: 90,
                 backgroundColor: Colors.white,
               ),
-              SvgPicture.asset(
-                generalWorkoutModel.image,
+              SvgPicture.network(
+                'http://strikyq.runasp.net${generalExerciseModel.photoUrl}',
                 fit: BoxFit.contain,
               ),
             ],

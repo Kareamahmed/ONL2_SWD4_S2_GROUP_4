@@ -61,12 +61,10 @@ class NotificationController extends GetxController {
   Future<void> periodicNotification({
     required int id,
     required String body,
-    required tz.TZDateTime scheduledDate,
   }) async {
     await _notiService.periodicNotification(
       id: id,
       body: body,
-      scheduledDate: scheduledDate,
     );
   }
 }

@@ -13,8 +13,8 @@ import 'package:striky/presentation/view/workOut/widgets/exercise_item.dart';
 import 'package:striky/presentation/view/workOut/widgets/schedule_container.dart';
 
 class ExerciseWorkOut extends StatelessWidget {
-  const ExerciseWorkOut({super.key});
-
+  const ExerciseWorkOut({super.key, required this.id});
+  final int id;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -14,7 +14,7 @@ class ProfileNotificationContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final NotificationController _notiController = Get.find();
+    //final NotificationController _notiController = Get.find();
     return Container(
       decoration: ContainerDecoration.kFloatingContainerDecoration,
       margin: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -43,16 +43,16 @@ class ProfileNotificationContainer extends StatelessWidget {
             'Pop-up Notification',
             style: TextFonts.kdarkgrayfont14,
           ),
-          trailing: Obx(
-            () => CustomSwitch(
-                isOn: _notiController.notificationsEnabled.value,
-                onToggle: () {
-                  _notiController.notificationsEnabled.value =
-                      !_notiController.notificationsEnabled.value;
-                  _notiController.toggleNotifications(
-                      _notiController.notificationsEnabled.value);
-                }),
-          ),
+          // trailing: Obx(
+          //   () => CustomSwitch(
+          //       isOn: _notiController.notificationsEnabled.value,
+          //       onToggle: () {
+          //         _notiController.notificationsEnabled.value =
+          //             !_notiController.notificationsEnabled.value;
+          //         _notiController.toggleNotifications(
+          //             _notiController.notificationsEnabled.value);
+          //       }),
+          // ),
         )
       ]),
     );

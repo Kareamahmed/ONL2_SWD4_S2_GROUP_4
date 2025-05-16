@@ -82,11 +82,12 @@ class WorkoutCard extends StatelessWidget {
                       _notiController.fullbodynotificationsEnabled.value;
                   _notiController.fullbodynotificationsEnabled.value = !current;
 
-                  _notiController.scheduleNotification(
-                      id: notificationId,
-                      body: 'this is me in it ',
-                      hour: 15,
-                      minute: 00);
+                  // _notiController.scheduleNotification(
+                  //     id: notificationId,
+                  //     body: 'this is me in it ',
+                  //     hour: 1,
+                  //     minute: 7);
+                  // _notiController.periodicNotification(id: 43, body: 'just tring to use the periodic notification', );
 
                   _notiController.showNotification(id: 0, body: 'what is it ');
                 },

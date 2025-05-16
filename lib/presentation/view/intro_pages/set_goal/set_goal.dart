@@ -61,7 +61,12 @@ class _SetGoalState extends State<SetGoal> {
               child: MainCustomButton(
                 title: 'Confirm',
                 onPressed: () {
-                  GoRouter.of(context).push(AppRoutes.uploadPic);
+                  GoRouter.of(context).push(AppRoutes.setInfo,
+                      extra: _pageViewController.page == 0
+                          ? 'Improve Shape'
+                          : _pageViewController.page == 1
+                              ? 'Lean & Tone'
+                              : 'Lose a Fat');
                 },
               ),
             ),

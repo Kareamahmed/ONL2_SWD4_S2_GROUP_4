@@ -14,8 +14,10 @@ class GeneralexerciseCubit extends Cubit<GeneralexerciseState> {
     emit(GeneralexerciseLoading());
     var result = await generalWorkoutRepo.getGeneralWorkout();
     result.fold((failure) {
+      print('.............aright there is an error here  ${failure.errorMSG}');
       emit(GeneralexerciseFailure(errmsg: failure.errorMSG));
     }, (generalWorkout) {
+      print('.............aright there is  the $generalWorkout');
       emit(GeneralexerciseSuccess(generalworkouts: generalWorkout));
     });
   }

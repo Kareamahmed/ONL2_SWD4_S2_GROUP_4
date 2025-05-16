@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:striky/core/Errors/failures.dart';
+import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/data/models/workout/general_exercise_model/general_exercise_model.dart';
 import 'package:striky/data/repos/workout/general_workout/general_workout_repo.dart';
 import 'package:striky/data/source/API/api_service.dart';
@@ -10,11 +11,21 @@ class GeneralWorkoutRepoImpl implements GeneralWorkoutRepo {
 
   GeneralWorkoutRepoImpl({required this.apiService});
   @override
-  Future<Either<Failure, List<GeneralExerciseModel>>> getGeneralWorkout() async {
+  Future<Either<Failure, List<GeneralExerciseModel>>>
+      getGeneralWorkout() async {
     try {
-    final response = await apiService.get(url: 'url');
-    final List<GeneralExerciseModel> result = (response as List ).map((data) => GeneralExerciseModel.fromJson(data)).toList();
-    return right(result);
+      final response =
+          await apiService.get(url: '${kurlBase}/api/Category/GetAll');
+      final List<GeneralExerciseModel> result = (response as List)
+          .map((data) => GeneralExerciseModel.fromJson(data))
+          .toList();
+      result.forEach((exercise) {
+        String fullImageUrl =
+            '${kurlBase}${exercise.photoUrl}'; // Concatenate the base URL with the relative photo URL
+        print(
+            'ID: ${exercise.id}, Name: ${exercise.name}, Full Photo URL: $fullImageUrl');
+      });
+      return right(result);
     } on DioException catch (dioException) {
       return left(ServerFailure.DioException(dioException));
     } catch (e) {

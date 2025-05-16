@@ -10,7 +10,7 @@ class ApiService {
     return _instance;
   }
 
-  Future<Map<String, dynamic>> get({required String url, String? token}) async {
+  Future<dynamic> get({required String url, String? token}) async {
     Map<String, String> headers = {};
 
     headers.addAll({'Authorization': 'Bearer '});
@@ -51,6 +51,12 @@ class ApiService {
         },
       ),
     );
+
+    
+    if (response.data is String) {
+      return {"message": response.data};
+    }
+
     return response.data;
   }
 

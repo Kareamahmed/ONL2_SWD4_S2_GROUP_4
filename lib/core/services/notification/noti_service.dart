@@ -99,7 +99,7 @@ class NotiService {
         body,
         scheduledate,
         notificationDetails(),
-        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        androidScheduleMode: AndroidScheduleMode.exact,
         matchDateTimeComponents: repeatdaily ? DateTimeComponents.time : null,
       );
       print('✅ Scheduled successfully for $scheduledate');
@@ -113,7 +113,6 @@ class NotiService {
     int id = 0,
     String? body,
     bool repeatdaily = true,
-    required tz.TZDateTime scheduledDate,
   }) async {
     return notificationsPlugin.periodicallyShow(
       100,
@@ -122,7 +121,7 @@ class NotiService {
       RepeatInterval.hourly,
       notificationDetails(),
       androidScheduleMode:
-          AndroidScheduleMode.exactAllowWhileIdle, // more precise
+          AndroidScheduleMode.inexactAllowWhileIdle, // more precise
     );
   }
 

@@ -22,7 +22,7 @@ class CustomProfileTile extends StatelessWidget {
       leading: CircleAvatar(
         radius: 30,
         backgroundColor: kprimaryColor,
-        child: SvgPicture.asset(img),
+        child: SvgPicture.network(img),
       ),
       title: Text(
         name,

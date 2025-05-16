@@ -1,4 +1,13 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:striky/core/services/service_locator/service_locator.dart';
+import 'package:striky/data/repos/Auth/auth_repo_IMPL.dart';
+import 'package:striky/data/repos/home/home_repo_IMPL.dart';
+import 'package:striky/presentation/cubits/auth/Pic_cubit/pic_cubit_cubit.dart';
+import 'package:striky/presentation/cubits/auth/login_cubit/login_cubit.dart';
+import 'package:striky/presentation/cubits/auth/register1/register1_cubit.dart';
+import 'package:striky/presentation/cubits/auth/setInfo/setinfo_cubit.dart';
+import 'package:striky/presentation/cubits/profile/profile_cubit.dart';
 import 'package:striky/presentation/view/home/fitover_screen/widgets/fitover_loader.dart';
 import 'package:striky/presentation/view/auth/congrats_screen/congrats_screen.dart';
 import 'package:striky/presentation/view/auth/create_account/create_account.dart';
@@ -6,13 +15,13 @@ import 'package:striky/presentation/view/auth/login/login_page.dart';
 import 'package:striky/presentation/view/auth/forget_password_screen/foget_password_screen.dart';
 import 'package:striky/presentation/view/auth/otp/otp_page.dart';
 import 'package:striky/presentation/view/auth/reset_password/reset_password.dart';
-import 'package:striky/presentation/view/home/fitover_screen/fit_over_screen.dart';
 import 'package:striky/presentation/view/intro_pages/set_goal/set_goal.dart';
 import 'package:striky/presentation/view/auth/set_info/set_info.dart';
 import 'package:striky/presentation/view/intro_pages/upload_pic/apload_pic.dart';
 import 'package:striky/presentation/view/intro_pages/on_boarding_pages/on_boarding_pages.dart';
 import 'package:striky/presentation/view/myPhotos/camera_screen/camera_screen.dart';
 import 'package:striky/presentation/view/navigation_buttom_bar/navigation_buttom_bar.dart';
+import 'package:striky/presentation/view/test/notiDemo.dart';
 import 'package:striky/presentation/view/workOut/pages/exercise_page.dart';
 import 'package:striky/presentation/view/workOut/pages/exercise_work_out.dart';
 import 'package:striky/presentation/view/workOut/pages/schedule/pages/add_schedule.dart';
@@ -36,9 +45,10 @@ class AppRoutes {
   static const String schedulescreen = "/schedulescreen";
   static const String addSchedule = "/addSchedule";
   static const String fitoverviewloader = "/fitoverviewloader";
+  static const String notificationdemopage = "/notificationdemopage";
 
   static final GoRouter router = GoRouter(
-    initialLocation: navigationButtomBarPage,
+    initialLocation: onboardingScreen,
     routes: [
       GoRoute(
         path: onboardingScreen,
@@ -46,11 +56,17 @@ class AppRoutes {
       ),
       GoRoute(
         path: login,
-        builder: (context, state) => const LoginPage(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => LoginCubit(getIt.get<AuthRepoImpl>()),
+          child: LoginPage(),
+        ),
       ),
       GoRoute(
         path: createaccount,
-        builder: (context, state) => const CreateAccount(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => Register1Cubit(getIt.get<AuthRepoImpl>()),
+          child: CreateAccount(),
+        ),
       ),
       GoRoute(
         path: forgetPasswordScreen,
@@ -70,7 +86,10 @@ class AppRoutes {
       ),
       GoRoute(
         path: setInfo,
-        builder: (context, state) => SetInfo(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => SetinfoCubit(getIt.get<AuthRepoImpl>()),
+          child: SetInfo(goal: state.extra as String),
+        ),
       ),
       GoRoute(
         path: setGoal,
@@ -78,11 +97,17 @@ class AppRoutes {
       ),
       GoRoute(
         path: uploadPic,
-        builder: (context, state) => UploadPic(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => PicCubitCubit(getIt.get<AuthRepoImpl>()),
+          child: UploadPic(),
+        ),
       ),
       GoRoute(
         path: navigationButtomBarPage,
-        builder: (context, state) => NavigationButtomBarPage(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => ProfileCubit(getIt.get<HomeRepoImpl>()),
+          child: NavigationButtomBarPage(),
+        ),
       ),
       GoRoute(
         path: camerascreen,
@@ -90,7 +115,7 @@ class AppRoutes {
       ),
       GoRoute(
         path: exerciseworkOut,
-        builder: (context, state) => ExerciseWorkOut(),
+        builder: (context, state) => ExerciseWorkOut(id: state.extra as int),
       ),
       GoRoute(
         path: exercisepage,
@@ -107,6 +132,9 @@ class AppRoutes {
       GoRoute(
           path: fitoverviewloader,
           builder: (context, state) => FitOverviewLoader()),
+      GoRoute(
+          path: notificationdemopage,
+          builder: (context, state) => NotificationDemoPage()),
     ],
   );
 }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:striky/core/constants/container_decoration.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
 import 'package:striky/core/routes/go_route.dart';
+import 'package:striky/data/models/workout/general_exercise_model/general_exercise_model.dart';
 import 'package:striky/data/models/workout/general_workout_model.dart';
+import 'package:striky/presentation/cubits/Exercises/gen/generalexercise_cubit.dart';
 import 'package:striky/presentation/view/myPhotos/widgets/custom_purple_button.dart';
 import 'package:striky/presentation/view/workOut/widgets/custom_divider.dart';
 import 'package:striky/presentation/view/workOut/widgets/double_text.dart';
@@ -99,44 +102,48 @@ class WorkOut extends StatelessWidget {
                           child: DoubleText(
                               text1: 'What Do You Want to Train', text2: ''),
                         ),
-                        SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              WorkoutInfoCard(
-                                generalWorkoutModel: GeneralWorkoutModel(
-                                    image: kfullbodyimg,
-                                    title: 'Fullbody Workout',
-                                    exerciseNo: '12',
-                                    duration: '32',
-                                    onTapped: () {
-                                      GoRouter.of(context)
-                                          .push(AppRoutes.exerciseworkOut);
-                                    }),
-                              ),
-                              WorkoutInfoCard(
-                                generalWorkoutModel: GeneralWorkoutModel(
-                                    image: klowbodyimg,
-                                    title: 'Lowbody Workout',
-                                    exerciseNo: '10',
-                                    duration: '24',
-                                    onTapped: () {
-                                      GoRouter.of(context)
-                                          .push(AppRoutes.exerciseworkOut);
-                                    }),
-                              ),
-                              WorkoutInfoCard(
-                                generalWorkoutModel: GeneralWorkoutModel(
-                                    image: kabimg,
-                                    title: 'AB Workout',
-                                    exerciseNo: '10',
-                                    duration: '24',
-                                    onTapped: () {
-                                      GoRouter.of(context)
-                                          .push(AppRoutes.exerciseworkOut);
-                                    }),
-                              ),
-                            ],
-                          ),
+                        BlocBuilder<GeneralexerciseCubit, GeneralexerciseState>(
+                          builder: (context, state) {
+                            if (state is GeneralexerciseLoading) {
+                              return SliverToBoxAdapter(
+                                child:
+                                    Center(child: CircularProgressIndicator()),
+                              );
+                            } else if (state is GeneralexerciseSuccess) {
+                              return SliverList(
+                                delegate: SliverChildBuilderDelegate(
+                                  (context, index) {
+                                    final workout =
+                                        state.generalworkouts[index];
+                                    return WorkoutInfoCard(
+                                      generalExerciseModel:
+                                          GeneralExerciseModel(
+                                        id: workout.id,
+                                        name: workout.name,
+                                        countExercises: workout.countExercises,
+                                        photoUrl: workout.photoUrl,
+                                      ),
+                                    );
+                                  },
+                                  childCount: state.generalworkouts.length,
+                                ),
+                              );
+                            } else if (state is GeneralexerciseFailure) {
+                              return SliverToBoxAdapter(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Text(
+                                    state.errmsg,
+                                    style: TextStyle(color: Colors.red),
+                                  ),
+                                ),
+                              );
+                            } else {
+                              return const SliverToBoxAdapter(
+                                child: Center(child: Text('Try again')),
+                              );
+                            }
+                          },
                         ),
                       ],
                     ),
