@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:striky/core/constants/container_decoration.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
 import 'package:striky/core/routes/go_route.dart';
-import 'package:striky/data/models/workout/general_exercise_model/general_exercise_model.dart';
-import 'package:striky/data/models/workout/general_workout_model.dart';
-import 'package:striky/presentation/cubits/Exercises/gen/generalexercise_cubit.dart';
 import 'package:striky/presentation/view/myPhotos/widgets/custom_purple_button.dart';
 import 'package:striky/presentation/view/workOut/widgets/custom_divider.dart';
 import 'package:striky/presentation/view/workOut/widgets/double_text.dart';
@@ -102,14 +98,22 @@ class WorkOut extends StatelessWidget {
                           child: DoubleText(
                               text1: 'What Do You Want to Train', text2: ''),
                         ),
-                       SliverToBoxAdapter(
-                        child: WorkoutInfoCard(
-                                       id: 1,
-                                        name: 'Fullbody',
-                                        countExercises: 10,
-                                        photoUrl: kabimg,
-                                    ),
-                       ),
+
+                        SliverList(
+                          delegate: SliverChildBuilderDelegate(
+                            (context, index) {
+                              final part = kBodyParts[index];
+                              final pic = kBodyPartspics[index];
+                              return WorkoutInfoCard(
+                                id: index,
+                                name: part,
+                                countExercises: 10, 
+                                photoUrl: pic, 
+                              );
+                            },
+                            childCount: kBodyParts.length,
+                          ),
+                        ),
                       ],
                     ),
                   ),

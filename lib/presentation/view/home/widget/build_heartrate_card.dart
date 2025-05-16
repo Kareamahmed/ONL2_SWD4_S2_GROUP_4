@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:striky/presentation/view/workOut/widgets/chart.dart';
 
 class BuildHeartrateCard extends StatelessWidget {
   const BuildHeartrateCard({super.key});
@@ -39,8 +42,9 @@ class BuildHeartrateCard extends StatelessWidget {
               color: Color(0xff92A3FD),
             ),
           ),
-          const SizedBox(height: 10),
-          const Placeholder(fallbackHeight: 80),
+          const SizedBox(height: 50, 
+          child: Chart(),),
+          
         ],
       ),
     );

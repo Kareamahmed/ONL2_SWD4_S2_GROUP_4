@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:striky/core/services/service_locator/service_locator.dart';
 import 'package:striky/data/repos/Auth/auth_repo_IMPL.dart';
 import 'package:striky/data/repos/home/home_repo_IMPL.dart';
+import 'package:striky/data/repos/workout/general_workout/general_workout_repo_IMPl.dart';
+import 'package:striky/presentation/cubits/Exercises/exercise/excercisescubit_cubit.dart';
 import 'package:striky/presentation/cubits/auth/Pic_cubit/pic_cubit_cubit.dart';
 import 'package:striky/presentation/cubits/auth/login_cubit/login_cubit.dart';
 import 'package:striky/presentation/cubits/auth/register1/register1_cubit.dart';
@@ -26,6 +28,7 @@ import 'package:striky/presentation/view/workOut/pages/exercise_page.dart';
 import 'package:striky/presentation/view/workOut/pages/exercise_work_out.dart';
 import 'package:striky/presentation/view/workOut/pages/schedule/pages/add_schedule.dart';
 import 'package:striky/presentation/view/workOut/pages/schedule/pages/schedule_screen.dart';
+import 'package:striky/presentation/view/workOut/widgets/local_excercise_widget.dart';
 
 class AppRoutes {
   static const String login = "/login";
@@ -115,11 +118,14 @@ class AppRoutes {
       ),
       GoRoute(
         path: exerciseworkOut,
-        builder: (context, state) => ExerciseWorkOut(id: state.extra as int),
+        builder: (context, state) => BlocProvider(
+          create: (context) => ExcercisescubitCubit(getIt.get<GeneralWorkoutRepoImpl>())..getLOcalExcercises(),
+          child: ExerciseWorkOut(bodyPart: state.extra as String),
+        ),
       ),
       GoRoute(
         path: exercisepage,
-        builder: (context, state) => ExercisePage(),
+        builder: (context, state) => ExercisePage(id: state.extra as String),
       ),
       GoRoute(
         path: schedulescreen,

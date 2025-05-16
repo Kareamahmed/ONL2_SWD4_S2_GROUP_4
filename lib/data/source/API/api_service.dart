@@ -13,7 +13,7 @@ class ApiService {
   Future<dynamic> get({required String url, String? token}) async {
     Map<String, String> headers = {};
 
-    headers.addAll({'Authorization': 'Bearer '});
+    headers.addAll({'Authorization': 'Bearer $token'});
 
     var response = await _dio.get(
       url,

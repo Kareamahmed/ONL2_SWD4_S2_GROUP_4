@@ -34,9 +34,14 @@ class GeneralWorkoutRepoImpl implements GeneralWorkoutRepo {
   }
 
   @override
-  Future<Either<Failure, GeneralExerciseModel>> getlocalworkout() {
-    // TODO: implement getlocalworkout
-    throw UnimplementedError();
+  Future<Either<Failure, List<String>>> getlocalworkout() async{
+   try {
+     final response =
+          await apiService.get(url: '${kurlBase}/exercises/bodyPartList',token: '980692b518mshd391448e6e56938p1b16dajsnOa90141f353d');
+          return right(response);
+   } catch (e) {
+     return left(ServerFailure(e.toString()));
+   }
   }
 
   @override

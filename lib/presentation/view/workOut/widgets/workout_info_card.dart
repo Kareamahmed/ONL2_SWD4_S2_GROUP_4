@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
 import 'package:striky/core/routes/go_route.dart';
-import 'package:striky/data/models/workout/general_exercise_model/general_exercise_model.dart';
 
 class WorkoutInfoCard extends StatelessWidget {
   const WorkoutInfoCard({super.key,  required this.id, this.name, this.photoUrl, this.countExercises});
@@ -28,7 +27,7 @@ class WorkoutInfoCard extends StatelessWidget {
         children: [
           // Left side: Texts
           Expanded(
-            flex: 2,
+            flex: 3,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -46,7 +45,7 @@ class WorkoutInfoCard extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     GoRouter.of(context).push(AppRoutes.exerciseworkOut,
-                        extra: id);
+                        extra: name);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
@@ -72,19 +71,14 @@ class WorkoutInfoCard extends StatelessWidget {
 
           // Right side: Im,age
           Expanded(
-              child: Stack(
-            alignment: Alignment.center,
-            children: [
-              CircleAvatar(
-                radius: 90,
-                backgroundColor: Colors.white,
-              ),
-              SvgPicture.asset(
-                photoUrl!,
-                fit: BoxFit.contain,
-              ),
-            ],
-          )),
+            flex: 2,
+              child: ClipRRect(
+    borderRadius: BorderRadius.circular(25), // half of width/height
+    child: SvgPicture.asset(
+      photoUrl!,
+      fit: BoxFit.cover,
+    ),
+  )),
         ],
       ),
     );

@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:striky/presentation/view/workOut/widgets/step_item.dart';
 
 class CustomStepper extends StatelessWidget {
-  const CustomStepper({super.key});
+  final List<String> instructions;
+
+  const CustomStepper({super.key, required this.instructions});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
       children: List.generate(
-        4,
+        instructions.length,
         (index) => StepItem(
-          title: 'Spread Your Arms',
-          description:
-              'To make the gestures feel more relaxed, stretch your arms as you start this movement. No bending of hands.',
+          title: 'Step ${index + 1}',
+          description: instructions[index],
         ),
       ),
     );
