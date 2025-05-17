@@ -24,7 +24,7 @@ class Header extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Ana',
+                'Your Name',
                 style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
@@ -44,13 +44,10 @@ class Header extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              CustomSwitch(isOn: false, onToggle: () {}),
               Row(
                 children: [
-                  custom.IconButton(Icons.search),
-                  const SizedBox(width: 10),
                   InkWell(
                       onTap: () {
                         GoRouter.of(context).push(AppRoutes.notificationView);

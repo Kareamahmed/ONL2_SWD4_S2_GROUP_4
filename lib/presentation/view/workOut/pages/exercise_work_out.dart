@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:striky/core/constants/container_decoration.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
-import 'package:striky/core/routes/go_route.dart';
+import 'package:striky/presentation/providers/exercise_provider.dart';
 import 'package:striky/presentation/view/workOut/widgets/custom_divider.dart';
 import 'package:striky/presentation/view/workOut/widgets/defficulty_container.dart';
 import 'package:striky/presentation/view/workOut/widgets/double_text.dart';
-import 'package:striky/presentation/view/workOut/widgets/ex_gears.dart';
-import 'package:striky/presentation/view/workOut/widgets/exercise_item.dart';
+import 'package:striky/presentation/view/workOut/widgets/local_excercise_widget.dart';
 import 'package:striky/presentation/view/workOut/widgets/schedule_container.dart';
 
 class ExerciseWorkOut extends StatelessWidget {
-  const ExerciseWorkOut({super.key, required this.id});
-  final int id;
+  const ExerciseWorkOut({
+    super.key,
+    required this.bodyPart,
+  });
+  final String bodyPart;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,39 +94,13 @@ class ExerciseWorkOut extends StatelessWidget {
                             ),
                           ),
                           SliverToBoxAdapter(
-                            child: DoubleText(
-                                text1: 'You’ll Need', text2: '5 Items'),
-                          ),
-                          SliverToBoxAdapter(
-                            child: SizedBox(
-                              height: 180,
-                              child: ListView.builder(
-                                shrinkWrap: true,
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (context, index) =>
-                                    ExGears(image: kbarbell, name: 'Barbell'),
-                                itemCount: 10,
-                              ),
-                            ),
-                          ),
-                          SliverToBoxAdapter(
                             child:
                                 DoubleText(text1: 'Exercises', text2: '3 Sets'),
                           ),
                           SliverToBoxAdapter(
-                            child: ListView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemBuilder: (context, index) => ExerciseItem(
-                                title: 'Warm up',
-                                subtitle: '12x',
-                                image: kfullbodyimg,
-                                onTap: () {
-                                  GoRouter.of(context)
-                                      .push(AppRoutes.exercisepage);
-                                },
-                              ),
-                              itemCount: 10,
+                            child: ChangeNotifierProvider(
+                              create: (_) => ExerciseProvider(),
+                              child: LocalExerciseWidget(bodyPart: bodyPart),
                             ),
                           ),
                         ],

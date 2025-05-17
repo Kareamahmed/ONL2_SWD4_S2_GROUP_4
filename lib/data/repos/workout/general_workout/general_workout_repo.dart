@@ -4,6 +4,6 @@ import 'package:striky/data/models/workout/general_exercise_model/general_exerci
 
 abstract class GeneralWorkoutRepo {
   Future<Either<Failure, List<GeneralExerciseModel>>> getGeneralWorkout();
-  Future<Either<Failure, GeneralExerciseModel>> getlocalworkout();
+  Future<Either<Failure, List<String>>> getlocalworkout();
   Future<Either<Failure, GeneralExerciseModel>> getworkoutdetails();
 }

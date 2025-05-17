@@ -4,12 +4,14 @@ import 'package:go_router/go_router.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
 import 'package:striky/core/routes/go_route.dart';
-import 'package:striky/data/models/workout/general_exercise_model/general_exercise_model.dart';
 
 class WorkoutInfoCard extends StatelessWidget {
-  const WorkoutInfoCard({super.key, required this.generalExerciseModel});
+  const WorkoutInfoCard({super.key,  required this.id, this.name, this.photoUrl, this.countExercises});
 
-  final GeneralExerciseModel generalExerciseModel;
+  final int id;
+  final String? name;
+  final String? photoUrl;
+  final int? countExercises;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,25 +27,25 @@ class WorkoutInfoCard extends StatelessWidget {
         children: [
           // Left side: Texts
           Expanded(
-            flex: 2,
+            flex: 3,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  generalExerciseModel.name!,
+                 name!,
                   style: TextFonts.kgraynormalfont16.copyWith(
                       color: Colors.black, fontWeight: FontWeight.w500),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  '${generalExerciseModel.countExercises} Exercises ',
+                  '$countExercises Exercises ',
                   style: TextFonts.kdarkgrayfont14.copyWith(fontSize: 12),
                 ),
                 Spacer(),
                 ElevatedButton(
                   onPressed: () {
                     GoRouter.of(context).push(AppRoutes.exerciseworkOut,
-                        extra: generalExerciseModel.id);
+                        extra: name);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
@@ -69,19 +71,14 @@ class WorkoutInfoCard extends StatelessWidget {
 
           // Right side: Im,age
           Expanded(
-              child: Stack(
-            alignment: Alignment.center,
-            children: [
-              CircleAvatar(
-                radius: 90,
-                backgroundColor: Colors.white,
-              ),
-              SvgPicture.network(
-                'http://strikyq.runasp.net${generalExerciseModel.photoUrl}',
-                fit: BoxFit.contain,
-              ),
-            ],
-          )),
+            flex: 2,
+              child: ClipRRect(
+    borderRadius: BorderRadius.circular(25), // half of width/height
+    child: SvgPicture.asset(
+      photoUrl!,
+      fit: BoxFit.cover,
+    ),
+  )),
         ],
       ),
     );

@@ -119,3 +119,29 @@ const ksetting = "assets/imgs/setting.svg";
 const kSharedPrefNotiEnabled = 'notifications_enabled';
 const kurlBase = "http://strikyq.runasp.net";
 const kshareduserId = 'userId';
+
+
+const List<String> kBodyParts = [
+  'Back',
+  'Cardio',
+  'Chest',
+  'Lower Arms',
+  'Lower Legs',
+  'Neck',
+  'Shoulders',
+  'Upper Arms',
+  'Upper Legs',
+  'Waist',
+];
+const List<String> kBodyPartspics = [
+  'assets/imgs/back.svg',
+  'assets/imgs/cardio1.svg',
+  'assets/imgs/chest.svg',
+  'assets/imgs/lower_arm.svg',
+  'assets/imgs/lowe_leg.svg',
+  'assets/imgs/neck.svg',
+  'assets/imgs/shoulders.svg',
+  'assets/imgs/uper_arm.svg',
+  'assets/imgs/uper_leg.svg',
+  'assets/imgs/waist.svg',
+];
