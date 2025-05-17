@@ -10,7 +10,7 @@ import 'package:timezone/data/latest.dart' as tz;
 class NotiService {
   final notificationsPlugin = FlutterLocalNotificationsPlugin();
 
-  bool _isInitialized = false;
+  final bool _isInitialized = false;
   bool get isInitialized => _isInitialized;
 
   Future<void> requestNotificationPermission() async {

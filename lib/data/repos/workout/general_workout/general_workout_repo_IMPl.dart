@@ -15,16 +15,16 @@ class GeneralWorkoutRepoImpl implements GeneralWorkoutRepo {
       getGeneralWorkout() async {
     try {
       final response =
-          await apiService.get(url: '${kurlBase}/api/Category/GetAll');
+          await apiService.get(url: '$kurlBase/api/Category/GetAll');
       final List<GeneralExerciseModel> result = (response as List)
           .map((data) => GeneralExerciseModel.fromJson(data))
           .toList();
-      result.forEach((exercise) {
+      for (var exercise in result) {
         String fullImageUrl =
-            '${kurlBase}${exercise.photoUrl}'; // Concatenate the base URL with the relative photo URL
+            '$kurlBase${exercise.photoUrl}'; // Concatenate the base URL with the relative photo URL
         print(
             'ID: ${exercise.id}, Name: ${exercise.name}, Full Photo URL: $fullImageUrl');
-      });
+      }
       return right(result);
     } on DioException catch (dioException) {
       return left(ServerFailure.DioException(dioException));

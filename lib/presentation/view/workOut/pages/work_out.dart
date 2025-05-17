@@ -6,7 +6,6 @@ import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
 import 'package:striky/core/routes/go_route.dart';
 import 'package:striky/data/models/workout/general_exercise_model/general_exercise_model.dart';
-import 'package:striky/data/models/workout/general_workout_model.dart';
 import 'package:striky/presentation/cubits/Exercises/gen/generalexercise_cubit.dart';
 import 'package:striky/presentation/view/myPhotos/widgets/custom_purple_button.dart';
 import 'package:striky/presentation/view/workOut/widgets/custom_divider.dart';

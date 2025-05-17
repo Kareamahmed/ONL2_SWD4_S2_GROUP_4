@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:striky/core/constants/text_fonts.dart';
 
 class AnalysisScreen extends StatelessWidget {
   const AnalysisScreen({super.key});

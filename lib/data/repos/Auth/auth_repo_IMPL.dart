@@ -1,9 +1,7 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/widgets.dart';
 import 'package:striky/core/Errors/failures.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/data/models/user_data/user_crediential.dart';
@@ -98,6 +96,7 @@ class AuthRepoImpl implements AuthRepo {
     }
   }
 
+  @override
   Future<Either<Failure, String>> setPic(String id, File photo) async {
     try {
       final formData = FormData.fromMap({

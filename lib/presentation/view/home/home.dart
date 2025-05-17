@@ -3,9 +3,7 @@ import 'package:striky/presentation/view/home/widget/bmi_card.dart';
 import 'package:striky/presentation/view/home/widget/build_heartrate_card.dart';
 import 'package:striky/presentation/view/home/widget/build_latest_workout_section.dart';
 import 'package:striky/presentation/view/home/widget/build_today_targetcard.dart';
-import 'package:striky/presentation/view/home/widget/build_workout_progress.dart';
 import 'package:striky/presentation/view/home/widget/header.dart';
-import 'package:striky/presentation/view/home/widget/stat_card.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -41,15 +39,6 @@ class Home extends StatelessWidget {
                 const SizedBox(height: 10),
                 BuildHeartrateCard(),
                 const SizedBox(height: 10),
-                Row(
-                  children: [
-                    StatCard("Steps", "8,765"),
-                    StatCard("Steps", "8,765"),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                BuildWorkoutProgress(),
-                const SizedBox(height: 20),
                 BuildLatestWorkoutSection(),
               ],
             ),

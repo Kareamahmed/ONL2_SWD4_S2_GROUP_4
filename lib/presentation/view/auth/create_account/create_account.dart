@@ -187,7 +187,7 @@ class _CreateAccountState extends State<CreateAccount> {
                         duration: Duration(seconds: 3),
                         flushbarPosition: FlushbarPosition.TOP,
                         backgroundColor: Colors.green,
-                      )..show(context);
+                      ).show(context);
 
                       // Save user ID to SharedPreferences
                       await _saveUserIdToSharedPreferences(state.userId);
@@ -200,7 +200,7 @@ class _CreateAccountState extends State<CreateAccount> {
                         duration: Duration(seconds: 3),
                         flushbarPosition: FlushbarPosition.TOP,
                         backgroundColor: Colors.red,
-                      )..show(context);
+                      ).show(context);
                     }
                   },
                   builder: (context, state) {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:striky/core/constants/global_constants.dart';
+import 'package:striky/core/routes/go_route.dart';
 import 'package:striky/presentation/view/home/widget/icon_button.dart'
     as custom;
 import 'package:striky/presentation/view/profile/widgets/custom_switch.dart';
@@ -20,7 +22,7 @@ class Header extends StatelessWidget {
           const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
                 'Ana',
                 style: TextStyle(
@@ -28,10 +30,15 @@ class Header extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontFamily: kprimaryfont),
               ),
-              CircleAvatar(
-                radius: 20,
-                backgroundColor: Colors.blue,
-                child: Icon(Icons.person, color: Colors.white),
+              InkWell(
+                onTap: () {
+                  //GoRouter.of(context).push(AppRoutes.);
+                },
+                child: CircleAvatar(
+                  radius: 20,
+                  backgroundColor: Colors.blue,
+                  child: Icon(Icons.person, color: Colors.white),
+                ),
               ),
             ],
           ),
@@ -44,7 +51,11 @@ class Header extends StatelessWidget {
                 children: [
                   custom.IconButton(Icons.search),
                   const SizedBox(width: 10),
-                  custom.IconButton(Icons.notifications),
+                  InkWell(
+                      onTap: () {
+                        GoRouter.of(context).push(AppRoutes.notificationView);
+                      },
+                      child: custom.IconButton(Icons.notifications)),
                 ],
               ),
             ],

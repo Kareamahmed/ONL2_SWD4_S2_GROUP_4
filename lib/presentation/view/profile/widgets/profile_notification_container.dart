@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:striky/controllers/notifications/notification_controller.dart';
 import 'package:striky/core/constants/container_decoration.dart';
 import 'package:striky/core/constants/global_constants.dart';
 import 'package:striky/core/constants/text_fonts.dart';
-import 'package:striky/presentation/view/profile/widgets/custom_switch.dart';
 
 class ProfileNotificationContainer extends StatelessWidget {
   const ProfileNotificationContainer({

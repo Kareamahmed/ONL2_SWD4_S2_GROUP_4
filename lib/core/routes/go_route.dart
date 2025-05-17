@@ -15,6 +15,7 @@ import 'package:striky/presentation/view/auth/login/login_page.dart';
 import 'package:striky/presentation/view/auth/forget_password_screen/foget_password_screen.dart';
 import 'package:striky/presentation/view/auth/otp/otp_page.dart';
 import 'package:striky/presentation/view/auth/reset_password/reset_password.dart';
+import 'package:striky/presentation/view/home/notification_screen/notification_view.dart';
 import 'package:striky/presentation/view/intro_pages/set_goal/set_goal.dart';
 import 'package:striky/presentation/view/auth/set_info/set_info.dart';
 import 'package:striky/presentation/view/intro_pages/upload_pic/apload_pic.dart';
@@ -46,6 +47,7 @@ class AppRoutes {
   static const String addSchedule = "/addSchedule";
   static const String fitoverviewloader = "/fitoverviewloader";
   static const String notificationdemopage = "/notificationdemopage";
+  static const String notificationView = "/notificationView";
 
   static final GoRouter router = GoRouter(
     initialLocation: onboardingScreen,
@@ -135,6 +137,9 @@ class AppRoutes {
       GoRoute(
           path: notificationdemopage,
           builder: (context, state) => NotificationDemoPage()),
+      GoRoute(
+          path: notificationView,
+          builder: (context, state) => NotificationView()),
     ],
   );
 }
